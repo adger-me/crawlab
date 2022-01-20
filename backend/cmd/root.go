@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"fmt"
+	"github.com/apex/log"
 	"strings"
 
 	"github.com/spf13/cobra"
@@ -29,6 +30,7 @@ func Execute() error {
 
 func init() {
 	cobra.OnInitialize(initConfig)
+	rootCmd.PersistentFlags().StringVar(&cfgFile, "c", "", "Use Custom Config File")
 }
 
 func initConfig() {
@@ -50,7 +52,21 @@ func initConfig() {
 	replacer := strings.NewReplacer(".", "_")
 	viper.SetEnvKeyReplacer(replacer)
 
+	// read config file
 	if err := viper.ReadInConfig(); err == nil {
 		fmt.Println("Using config file:", viper.ConfigFileUsed())
 	}
+
+	// initialize log level
+	initLogLevel()
+}
+
+func initLogLevel() {
+	// set log level
+	logLevel := viper.GetString("log.level")
+	l, err := log.ParseLevel(logLevel)
+	if err != nil {
+		l = log.InfoLevel
+	}
+	log.SetLevel(l)
 }

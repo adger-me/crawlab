@@ -30,7 +30,7 @@
 
 Golang-based distributed web crawler management platform, supporting various languages including Python, NodeJS, Go, Java, PHP and various web crawler frameworks including Scrapy, Puppeteer, Selenium.
 
-[Demo](http://crawlab.cn/demo) | [Documentation](http://docs.crawlab.cn)
+[Demo](https://demo-pro.crawlab.cn) | [Documentation](https://docs.crawlab.cn) | [Documentation (v0.6-beta)](http://docs-next.crawlab.cn)
 
 ## Installation
 
@@ -164,7 +164,7 @@ For Docker Deployment details, please refer to [relevant documentation](https://
 
 ## Architecture
 
-The architecture of Crawlab is consisted of a master node, worker nodes, [SeaweeFS](https://github.com/chrislusf/seaweedfs) (a distributed file system) and MongoDB database. 
+The architecture of Crawlab is consisted of a master node, worker nodes, [SeaweedFS](https://github.com/chrislusf/seaweedfs) (a distributed file system) and MongoDB database. 
 
 ![](https://github.com/crawlab-team/images/blob/main/20210729/crawlab-architecture-v0.6.png?raw=true)
 
