@@ -1,16 +1,13 @@
 # Crawlab
 
 <p>
-  <a href="https://github.com/crawlab-team/crawlab/actions/workflows/dockerpush.yml" target="_blank">
-    <img src="https://github.com/crawlab-team/crawlab/actions/workflows/dockerpush.yml/badge.svg">
-  </a>
-  <a href="https://hub.docker.com/r/tikazyq/crawlab" target="_blank">
-    <img src="https://img.shields.io/docker/pulls/tikazyq/crawlab?label=pulls&logo=docker">
+  <a href="https://github.com/crawlab-team/crawlab/actions/workflows/docker-crawlab.yml" target="_blank">
+    <img src="https://github.com/crawlab-team/crawlab/workflows/Docker%20Image%20CI:%20crawlab/badge.svg">
   </a>
   <a href="https://github.com/crawlab-team/crawlab/releases" target="_blank">
     <img src="https://img.shields.io/github/release/crawlab-team/crawlab.svg?logo=github">
   </a>
-  <a href="https://github.com/crawlab-team/crawlab/commits/master" target="_blank">
+  <a href="https://github.com/crawlab-team/crawlab/commits/main" target="_blank">
     <img src="https://img.shields.io/github/last-commit/crawlab-team/crawlab.svg">
   </a>
   <a href="https://github.com/crawlab-team/crawlab/issues?q=is%3Aissue+is%3Aopen+label%3Abug" target="_blank">
@@ -19,36 +16,22 @@
   <a href="https://github.com/crawlab-team/crawlab/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement" target="_blank">
     <img src="https://img.shields.io/github/issues/crawlab-team/crawlab/enhancement.svg?label=enhancements&color=cyan">
   </a>
-  <a href="https://github.com/crawlab-team/crawlab/blob/master/LICENSE" target="_blank">
+  <a href="https://github.com/crawlab-team/crawlab/blob/main/LICENSE" target="_blank">
     <img src="https://img.shields.io/github/license/crawlab-team/crawlab.svg">
   </a>
 </p>
 
-[中文](https://github.com/crawlab-team/crawlab/blob/master/README-zh.md) | English
+[中文](https://github.com/crawlab-team/crawlab/blob/main/README-zh.md) | English
 
-[Installation](#installation) | [Run](#run) | [Screenshot](#screenshot) | [Architecture](#architecture) | [Integration](#integration-with-other-frameworks) | [Compare](#comparison-with-other-frameworks) | [Community & Sponsorship](#community--sponsorship) | [CHANGELOG](https://github.com/crawlab-team/crawlab/blob/master/CHANGELOG.md) | [Disclaimer](https://github.com/crawlab-team/crawlab/blob/master/DISCLAIMER.md)
+[Installation](#installation) | [Run](#run) | [Screenshot](#screenshot) | [Architecture](#architecture) | [Integration](#integration-with-other-frameworks) | [Compare](#comparison-with-other-frameworks) | [Community & Sponsorship](#community--sponsorship) | [CHANGELOG](https://github.com/crawlab-team/crawlab/blob/main/CHANGELOG.md) | [Disclaimer](https://github.com/crawlab-team/crawlab/blob/main/DISCLAIMER.md)
 
 Golang-based distributed web crawler management platform, supporting various languages including Python, NodeJS, Go, Java, PHP and various web crawler frameworks including Scrapy, Puppeteer, Selenium.
 
-[Demo](https://demo-pro.crawlab.cn) | [Documentation](https://docs.crawlab.cn) | [Documentation (v0.6-beta)](http://docs-next.crawlab.cn)
+[Demo](https://demo.crawlab.cn) | [Documentation](https://docs.crawlab.cn/en/)
 
 ## Installation
 
-Three methods:
-1. [Docker](http://docs.crawlab.cn/Installation/Docker.html) (Recommended)
-2. [Direct Deploy](http://docs.crawlab.cn/Installation/Direct.html) (Check Internal Kernel)
-3. [Kubernetes](http://docs.crawlab.cn/Installation/Kubernetes.html) (Multi-Node Deployment)
-
-### Pre-requisite (Docker)
-- Docker 18.03+
-- MongoDB 3.6+
-- Docker Compose 1.24+ (optional but recommended)
-
-### Pre-requisite (Direct Deploy)
-- Go 1.15+
-- Node 12.20+
-- MongoDB 3.6+
-- [SeaweedFS](https://github.com/chrislusf/seaweedfs) 2.59+
+You can follow the [installation guide](https://docs.crawlab.cn/en/guide/installation/).
 
 ## Quick Start
 
@@ -60,7 +43,7 @@ cd examples/docker/basic
 docker-compose up -d
 ```
 
-Next, you can look into the `docker-compose.yml` (with detailed config params) and the [Documentation (Chinese)](http://docs.crawlab.cn) for further information. 
+Next, you can look into the `docker-compose.yml` (with detailed config params) and the [Documentation](http://docs.crawlab.cn/en/) for further information. 
 
 ## Run
 
@@ -110,7 +93,7 @@ services:
       - master
 
   mongo:
-    image: mongo:latest
+    image: mongo:4.2
     container_name: crawlab_example_mongo
     restart: always
 ```
@@ -121,7 +104,7 @@ Then execute the command below, and Crawlab Master and Worker Nodes + MongoDB wi
 docker-compose up -d
 ```
 
-For Docker Deployment details, please refer to [relevant documentation](https://tikazyq.github.io/crawlab-docs/Installation/Docker.html).
+For Docker Deployment details, please refer to [relevant documentation](https://docs.crawlab.cn/en/guide/installation/docker.html).
 
 
 ## Screenshot
@@ -271,11 +254,18 @@ Crawlab is easy to use, general enough to adapt spiders in any language and any 
   <img src="https://avatars3.githubusercontent.com/u/32983588?s=460&u=83082ddc0a3020279374b94cce70f1aebb220b3d&v=4" height="80">
 </a>
 
-## Community & Sponsorship
+## Supported by JetBrains
 
-If you feel Crawlab could benefit your daily work or your company, please add the author's Wechat account noting "Crawlab" to enter the discussion group. Or you scan the Alipay QR code below to give us a reward to upgrade our teamwork software or buy a coffee.
+<p align="center">
+  <a href="https://www.jetbrains.com" target="_blank">
+    <img src="https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.png" height="360">
+  </a>
+</p>
+
+## Community
+
+If you feel Crawlab could benefit your daily work or your company, please add the author's Wechat account noting "Crawlab" to enter the discussion group.
 
 <p align="center">
     <img src="https://crawlab.oss-cn-hangzhou.aliyuncs.com/gitbook/qrcode.png" height="360">
-    <img src="https://crawlab.oss-cn-hangzhou.aliyuncs.com/gitbook/payment.jpg" height="360">
 </p>

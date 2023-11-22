@@ -1,4 +1,5 @@
-import 'crawlab-ui/dist/crawlab-ui.css';
+import 'crawlab-ui/dist/style.css';
+import 'vue';
 import {createApp} from 'crawlab-ui';
 
 (async function () {

@@ -1,12 +1,6 @@
 #!/bin/bash
 
-if [ "${CRAWLAB_NODE_MASTER}" = "Y" ]; then
-	# start master
-	/bin/bash /app/bin/docker-start-master.sh
+# replace default api path to new one
+python /app/bin/update_docker_js_api_address.py
 
-	# start crawlab
-	crawlab-server master
-else
-	# start crawlab
-	crawlab-server worker
-fi
+crawlab-server server
